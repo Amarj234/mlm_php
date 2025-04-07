@@ -6,4 +6,4 @@ username - mlm
 password - 1234
 Enjoy Project
 
-If any queries reach out - manmathamk126@gmail.com
+If any queries reach out - amarj234@gmail.com
