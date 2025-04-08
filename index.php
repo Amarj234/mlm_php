@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+include('userdash/php-includes/connect.php');
+?>
 <head>
 	<!-- basic -->
 	<meta charset="utf-8">
@@ -115,26 +117,23 @@
 				value for your money and achieve your goals</p>
 			<div class="service_section_2">
 				<div class="row">
-					<div class="col-sm-12 col-lg-4">
-						<!-- <div class="icon_1"><img src="images/icon-1.png"></div>
-						<h1 class="website_text">website element</h1>
-						<p class="dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							tempor incididunt ut
-							labore et dolore magna aliq</p> -->
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="icon_1"><img src="images/icon-2.png"></div>
-						<h1 class="website_text">Rs 999</h1>
-						<p class="dolor_text">With our Rs 999 package plan, you can enjoy the benefits of a flexible and
-							rewarding career, all without breaking the bank.</p>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<!-- <div class="icon_1"><img src="images/icon-3.png"></div>
-						<h1 class="website_text">design element</h1>
-						<p class="dolor_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							tempor incididunt ut
-							labore et dolore magna aliq</p> -->
-					</div>
+				<?php
+$query = mysqli_query($con, "SELECT * FROM `service`");
+while($row=mysqli_fetch_array($query)){
+
+?>
+   <div class="col-sm-12 col-lg-4">
+            <div class="icon_1"><img src="<?php echo $row['image']  ?>"></div>
+            <h1 class="website_text"><?php echo $row['price']  ?></h1>
+            <h3 class="website_text"><?php echo $row['service_name']  ?></h3>
+            <p class="dolor_text"><?php echo $row['description']  ?></p>
+          </div>
+<?php
+
+
+}
+?>
+				
 				</div>
 			</div>
 		</div>
