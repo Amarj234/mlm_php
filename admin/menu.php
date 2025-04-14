@@ -3,6 +3,8 @@
 require('../userdash/php-includes/connect.php');
 
 $userid = $_SESSION['userid'];
+
+
 $qry = mysqli_query($con, "select * from user where email = '$userid'");
 $rws = mysqli_fetch_array($qry);
 $name = $rws['name'];
@@ -114,7 +116,7 @@ if (isset($_GET['file_id'])) {
 
 <body class="theme-light-blue">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    <!-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -128,7 +130,7 @@ if (isset($_GET['file_id'])) {
             </div>
             <p>Please wait...</p>
         </div>
-    </div>
+    </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -343,62 +345,32 @@ if (isset($_GET['file_id'])) {
                     </li>
                     <li>
                         <!-- <a href="join.php" style="pointer-events: <?php echo $dis ?>;"> -->
-                        <a href="join.php">
+                        <a href="product.php">
                             <i class="material-icons">layers</i>
-                            <span>Join User</span>
+                            <span>Products</span>
                         </a>
                     </li>
                     <li>
-                        <a href="downloads.php" style="pointer-events: <?php echo $dis ?>;">
+                        <a href="createPlan.php" style="pointer-events: <?php echo $dis ?>;">
                             <i class="material-icons">perm_media</i>
-                            <span>Downloads </span>
+                            <span>Create Servise </span>
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">widgets</i>
-                            <span>Profile</span>
+                  <li>
+                        <a href="createProduct.php" style="pointer-events: <?php echo $dis ?>;">
+                            <i class="material-icons">perm_media</i>
+                            <span>Create Product </span>
                         </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                    <span>View Profile</span>
-                                </a>
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="profile.php">Basic Info</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="kyc.php">Kyc</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">swap_calls</i>
-                            <span>Geneology</span>
+                 
+                   <li>
+                        <a href="addPlan.php" style="pointer-events: <?php echo $dis ?>;">
+                            <i class="material-icons">perm_media</i>
+                            <span>Create Plan </span>
                         </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="tree.php">Tree View</a>
-                            </li>
-                            <li>
-                                <a href="treeActive.php">Topup Tree</a>
-                            </li>
-                            <li>
-                                <a href="downline.php">My Downlines</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">My Referrals</a>
-                            </li> -->
-
-
-                        </ul>
                     </li>
+
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle" style="pointer-events: <?php echo $dis ?>;">
                             <i class="material-icons">assignment</i>
